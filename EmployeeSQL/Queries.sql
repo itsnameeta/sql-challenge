@@ -1,8 +1,9 @@
 ﻿-- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 SELECT E.emp_no,E.first_name, E.last_name, E.sex, S.salary
 FROM employees E
-INNER JOIN salaries S 
-ON E.emp_no= S.emp_no;
+JOIN salaries S 
+ON E.emp_no= S.emp_no
+ORDER BY E.emp_no;
 
 
 -- 2. List first name, last name, and hire date for employees who were hired in 1986.
