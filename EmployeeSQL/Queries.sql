@@ -1,23 +1,4 @@
-﻿--Data presence/ columns check
-SELECT *
-FROM employees;
-
-SELECT *
-FROM salaries;
-
-SELECT *
-FROM titles;
-
-SELECT *
-FROM departments;
-
-SELECT *
-FROM dept_emp;
-
-SELECT *
-FROM dept_manager;
-
--- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
+﻿-- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 SELECT E.emp_no,E.first_name, E.last_name, E.sex, S.salary
 FROM employees E
 INNER JOIN salaries S 
@@ -83,3 +64,53 @@ SELECT employees.last_name, count (*) frequency
 FROM employees
 GROUP BY employees.last_name
 ORDER BY frequency DESC;
+
+--Data presence/ columns check
+SELECT *
+FROM employees;
+
+SELECT *
+FROM salaries;
+
+SELECT *
+FROM titles;
+
+SELECT *
+FROM departments;
+
+SELECT *
+FROM dept_emp;
+
+SELECT *
+FROM dept_manager;
+
+--Duplication/ Relationship check
+SELECT count(*), emp_title_id
+FROM employees
+group by emp_title_id 
+having count(*)> 1;
+
+SELECT count(*), emp_no
+FROM salaries
+group by emp_no 
+having count(*)> 1;
+
+SELECT count(*), title_id
+FROM titles
+group by title_id 
+having count(*)> 1;
+
+SELECT count(*), dept_no
+FROM departments
+group by dept_no 
+having count(*)> 1;
+
+SELECT count(*), emp_no
+FROM dept_emp
+group by emp_no 
+having count(*)> 1;
+
+SELECT count(*), emp_no
+FROM dept_manager
+group by emp_no 
+having count(*)> 1;
