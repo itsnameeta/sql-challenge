@@ -1,2 +1,2 @@
 # PGADM Password
-pgadmin_pass = "password"
+pgadmin_pass = "tiki"
